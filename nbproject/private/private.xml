@@ -4,10 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/agome/Documents/NetBeansProjects/CartorioEleitoral/src/cartorioeleitoral/CartorioEleitoral.java</file>
-            <file>file:/C:/Users/agome/Documents/NetBeansProjects/CartorioEleitoral/src/cartorioeleitoral/Pessoa.java</file>
-            <file>file:/C:/Users/agome/Documents/NetBeansProjects/CartorioEleitoral/src/cartorioeleitoral/Eleitor.java</file>
-            <file>file:/C:/Users/agome/Documents/NetBeansProjects/CartorioEleitoral/src/cartorioeleitoral/Candidato.java</file>
-            <file>file:/C:/Users/agome/Documents/NetBeansProjects/CartorioEleitoral/src/cartorioeleitoral/CadastroCandidato.java</file>
+            <file>file:/C:/Users/agome/Documents/NetBeansProjects/CartorioEleitoral/src/controller/CadastroEleitor.java</file>
+            <file>file:/C:/Users/agome/Documents/NetBeansProjects/CartorioEleitoral/src/controller/CadastroCandidato.java</file>
         </group>
     </open-files>
 </project-private>

@@ -27,6 +27,7 @@ public class CartorioEleitoral {
         listaCandidatos.forEach((obj) -> {
             System.out.println(obj.getNome());
         });
+        
         listaEleitores.forEach((obj) -> {
             System.out.println(obj.getNome());
         });
