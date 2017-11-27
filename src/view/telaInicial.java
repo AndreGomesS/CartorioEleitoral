@@ -628,7 +628,7 @@ public class telaInicial extends javax.swing.JFrame {
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
         eleitor = new Eleitor(eleitorNome.getText(), Integer.parseInt(eleitorMatricula.getText()),Integer.parseInt(eleitorIdade.getText()));
-        System.out.println(""+eleitor.);
+        System.out.println("");
         
     }//GEN-LAST:event_jLabel4MousePressed
 
