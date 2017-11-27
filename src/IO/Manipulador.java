@@ -1,5 +1,4 @@
-teste
-        /*
+ /*
  * Manipula arquivo de linha que contém dados referêntes ao modelo.
  * Principais operações: leitura e escrita.
  */
