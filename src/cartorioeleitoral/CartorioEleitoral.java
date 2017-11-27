@@ -1,5 +1,6 @@
 package cartorioeleitoral;
 
+import IO.Manipulador;
 import controller.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,12 +25,15 @@ public class CartorioEleitoral {
         CadastroCandidato.cadastrarCandidato(0, "sem foto", "AndréDois", 160300003, 1990, listaCandidatos);
         
         
+        
+        
+        
         listaCandidatos.forEach((obj) -> {
-            System.out.println(obj.getNome());
+            Manipulador.escreverCandidato(obj);
         });
         
         listaEleitores.forEach((obj) -> {
-            System.out.println(obj.getNome());
+            Manipulador.escreverEleitor(obj);
         });
         
 
