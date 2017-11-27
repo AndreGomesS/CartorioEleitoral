@@ -5,9 +5,9 @@
  */
 package view;
 
+import controller.CadastroEleitor;
+import java.util.List;
 import model.Eleitor;
-
-
 
 /**
  *
@@ -19,12 +19,19 @@ public class telaInicial extends javax.swing.JFrame {
      * Creates new form telaInicial
      */
     int i = 0;
-    Eleitor eleitor;
+    List listaEleitores;
+    List listaCandidatos;
 
-    public telaInicial() {
+    public telaInicial(List listaEleitores, List listaCandidatos) {
         initComponents();
         apagarTelas();
+        this.listaEleitores = listaEleitores;
+        this.listaCandidatos = listaCandidatos;
         telaPrincipal.setVisible(true);
+    }
+
+    private telaInicial() {
+        initComponents();
     }
 
     /**
@@ -301,10 +308,14 @@ public class telaInicial extends javax.swing.JFrame {
         telaEleitorLayout.setHorizontalGroup(
             telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaEleitorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE)
+                .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(telaEleitorLayout.createSequentialGroup()
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(89, 89, 89)
+                            .addComponent(jLabel5))
                         .addGroup(telaEleitorLayout.createSequentialGroup()
                             .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -313,11 +324,7 @@ public class telaInicial extends javax.swing.JFrame {
                             .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(eleitorNome, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(eleitorMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(eleitorIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(telaEleitorLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(81, 81, 81)
-                        .addComponent(jLabel5)))
+                                .addComponent(eleitorIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(122, 122, 122))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaEleitorLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -329,7 +336,7 @@ public class telaInicial extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaEleitorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eleitorNome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -342,10 +349,10 @@ public class telaInicial extends javax.swing.JFrame {
                     .addComponent(eleitorIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(95, 95, 95))
+                .addGap(110, 110, 110))
         );
 
         telas.add(telaEleitor);
@@ -589,7 +596,7 @@ public class telaInicial extends javax.swing.JFrame {
         telaImportar.setVisible(false);
         telaExportarTSE.setVisible(false);
         telaExportarUrna.setVisible(false);
-           
+
     }
 
     private void jLabel_cad_eleitorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_cad_eleitorMousePressed
@@ -627,14 +634,20 @@ public class telaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
+<<<<<<< HEAD
         eleitor = new Eleitor(eleitorNome.getText(), Integer.parseInt(eleitorMatricula.getText()),Integer.parseInt(eleitorIdade.getText()));
         System.out.println("");
         
+=======
+
+        CadastroEleitor.cadastrarEleitor(eleitorNome.getText(), Integer.parseInt(eleitorMatricula.getText()), Integer.parseInt(eleitorIdade.getText()), listaEleitores);
+
+>>>>>>> 605712a433292b1da8d629bc2c61f7f561074382
     }//GEN-LAST:event_jLabel4MousePressed
 
     private void jLabel_importaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_importaMousePressed
-       apagarTelas();
-       telaImportar.setVisible(true);
+        apagarTelas();
+        telaImportar.setVisible(true);
     }//GEN-LAST:event_jLabel_importaMousePressed
 
     private void jLabel_exporta_urnaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_exporta_urnaMousePressed
@@ -643,8 +656,8 @@ public class telaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_exporta_urnaMousePressed
 
     private void jLabel_exporta_tseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_exporta_tseMousePressed
-       apagarTelas();
-       telaExportarTSE.setVisible(true);
+        apagarTelas();
+        telaExportarTSE.setVisible(true);
     }//GEN-LAST:event_jLabel_exporta_tseMousePressed
 
     /**
