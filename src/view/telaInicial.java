@@ -5,6 +5,7 @@
  */
 package view;
 
+import IO.Manipulador;
 import controller.CadastroEleitor;
 import java.util.List;
 import model.Eleitor;
@@ -350,7 +351,7 @@ public class telaInicial extends javax.swing.JFrame {
                     .addComponent(eleitorIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(110, 110, 110))
@@ -637,7 +638,7 @@ public class telaInicial extends javax.swing.JFrame {
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
 
         CadastroEleitor.cadastrarEleitor(eleitorNome.getText(), Integer.parseInt(eleitorMatricula.getText()), Integer.parseInt(eleitorIdade.getText()), listaEleitores);
-
+        
 
     }//GEN-LAST:event_jLabel4MousePressed
 

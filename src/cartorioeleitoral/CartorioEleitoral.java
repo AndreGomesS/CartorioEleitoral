@@ -35,13 +35,13 @@ public class CartorioEleitoral {
         
         
         
-        listaCandidatos.forEach((obj) -> {
-            Manipulador.escreverCandidato(obj);
-        });
-        
-        listaEleitores.forEach((obj) -> {
-            Manipulador.escreverEleitor(obj);
-        });
+//        listaCandidatos.forEach((obj) -> {
+//            Manipulador.escreverCandidato(obj);
+//        });
+//        
+//        listaEleitores.forEach((obj) -> {
+//            Manipulador.escreverEleitor(obj);
+//        });
         
 
 
