@@ -21,6 +21,7 @@ public class telaInicial extends javax.swing.JFrame {
     int i = 0;
     List listaEleitores;
     List listaCandidatos;
+    
 
     public telaInicial(List listaEleitores, List listaCandidatos) {
         initComponents();
@@ -634,15 +635,10 @@ public class telaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
-<<<<<<< HEAD
-        eleitor = new Eleitor(eleitorNome.getText(), Integer.parseInt(eleitorMatricula.getText()),Integer.parseInt(eleitorIdade.getText()));
-        System.out.println("");
-        
-=======
 
         CadastroEleitor.cadastrarEleitor(eleitorNome.getText(), Integer.parseInt(eleitorMatricula.getText()), Integer.parseInt(eleitorIdade.getText()), listaEleitores);
 
->>>>>>> 605712a433292b1da8d629bc2c61f7f561074382
+
     }//GEN-LAST:event_jLabel4MousePressed
 
     private void jLabel_importaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_importaMousePressed

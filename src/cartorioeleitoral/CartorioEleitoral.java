@@ -19,8 +19,7 @@ public class CartorioEleitoral {
         telaInicial tela;
         
         
-        telaInicial tela = new telaInicial();
-        tela.setVisible(true);
+    
         
         List<Candidato> listaCandidatos = new ArrayList<>();
         List<Eleitor> listaEleitores = new ArrayList<>();
