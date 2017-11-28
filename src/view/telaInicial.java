@@ -47,38 +47,38 @@ public class telaInicial extends javax.swing.JFrame {
 
         jPanel6 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel_importa = new javax.swing.JLabel();
+        btl_importa = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel_exporta_urna = new javax.swing.JLabel();
+        bt_exportaUrna = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel_cad_eleitor = new javax.swing.JLabel();
+        bt_cadastraEleitor = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel_exporta_tse = new javax.swing.JLabel();
+        bt_exportaTse = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel_cad_candidato = new javax.swing.JLabel();
+        bt_cadastraCandidato = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         telas = new javax.swing.JPanel();
         telaEleitor = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel_tituloCadastraEleitor = new javax.swing.JLabel();
+        jLabel_nomeEleitor = new javax.swing.JLabel();
+        jLabel_matriculaEleitor = new javax.swing.JLabel();
+        jLabel_idadeEleitor = new javax.swing.JLabel();
         eleitorNome = new javax.swing.JTextField();
         eleitorMatricula = new javax.swing.JTextField();
         eleitorIdade = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        bt_salvarEleitor = new javax.swing.JLabel();
+        bt_visualizarListaEleitor = new javax.swing.JLabel();
         telaCandidato = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        jLabel_tituloCadastrarCandidato = new javax.swing.JLabel();
+        jLabel_nomeCandidato = new javax.swing.JLabel();
+        jLabel_matriculaCandidato = new javax.swing.JLabel();
+        jLabel_idadeCandidato = new javax.swing.JLabel();
+        jTextField_nomeCandidato = new javax.swing.JTextField();
+        jTextField_matriculaCandidato = new javax.swing.JTextField();
+        jTextField_idadeCandidato = new javax.swing.JTextField();
+        bt_salvarCandidato = new javax.swing.JLabel();
+        bt_visualizarListaCandidato = new javax.swing.JLabel();
+        bt_anexarFotoCandidato = new javax.swing.JLabel();
         telaExportarTSE = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -101,11 +101,11 @@ public class telaInicial extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(200, 200));
 
-        jLabel_importa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ImportarDados.jpg"))); // NOI18N
-        jLabel_importa.setText("jLabel1");
-        jLabel_importa.addMouseListener(new java.awt.event.MouseAdapter() {
+        btl_importa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ImportarDados.jpg"))); // NOI18N
+        btl_importa.setText("jLabel1");
+        btl_importa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel_importaMousePressed(evt);
+                btl_importaMousePressed(evt);
             }
         });
 
@@ -113,21 +113,21 @@ public class telaInicial extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_importa, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(btl_importa, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_importa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btl_importa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(102, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(200, 200));
 
-        jLabel_exporta_urna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ExportarURNA.jpg"))); // NOI18N
-        jLabel_exporta_urna.setText("jLabel4");
-        jLabel_exporta_urna.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_exportaUrna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ExportarURNA.jpg"))); // NOI18N
+        bt_exportaUrna.setText("jLabel4");
+        bt_exportaUrna.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel_exporta_urnaMousePressed(evt);
+                bt_exportaUrnaMousePressed(evt);
             }
         });
 
@@ -135,27 +135,27 @@ public class telaInicial extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_exporta_urna, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(bt_exportaUrna, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_exporta_urna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_exportaUrna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(102, 255, 255));
         jPanel3.setPreferredSize(new java.awt.Dimension(200, 200));
 
-        jLabel_cad_eleitor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/CadEleitor.jpg"))); // NOI18N
-        jLabel_cad_eleitor.setText("jLabel2");
-        jLabel_cad_eleitor.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_cadastraEleitor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/CadEleitor.jpg"))); // NOI18N
+        bt_cadastraEleitor.setText("jLabel2");
+        bt_cadastraEleitor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel_cad_eleitorMouseEntered(evt);
+                bt_cadastraEleitorMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel_cad_eleitorMouseExited(evt);
+                bt_cadastraEleitorMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel_cad_eleitorMousePressed(evt);
+                bt_cadastraEleitorMousePressed(evt);
             }
         });
 
@@ -163,21 +163,21 @@ public class telaInicial extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_cad_eleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(bt_cadastraEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_cad_eleitor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_cadastraEleitor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel4.setBackground(new java.awt.Color(102, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(200, 200));
 
-        jLabel_exporta_tse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ExportarTSE.jpg"))); // NOI18N
-        jLabel_exporta_tse.setText("jLabel5");
-        jLabel_exporta_tse.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_exportaTse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ExportarTSE.jpg"))); // NOI18N
+        bt_exportaTse.setText("jLabel5");
+        bt_exportaTse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel_exporta_tseMousePressed(evt);
+                bt_exportaTseMousePressed(evt);
             }
         });
 
@@ -185,27 +185,27 @@ public class telaInicial extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_exporta_tse, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(bt_exportaTse, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_exporta_tse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_exportaTse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel5.setBackground(new java.awt.Color(102, 255, 255));
         jPanel5.setPreferredSize(new java.awt.Dimension(200, 200));
 
-        jLabel_cad_candidato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/CadCanditado.jpg"))); // NOI18N
-        jLabel_cad_candidato.setText("jLabel3");
-        jLabel_cad_candidato.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_cadastraCandidato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/CadCanditado.jpg"))); // NOI18N
+        bt_cadastraCandidato.setText("jLabel3");
+        bt_cadastraCandidato.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel_cad_candidatoMouseEntered(evt);
+                bt_cadastraCandidatoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel_cad_candidatoMouseExited(evt);
+                bt_cadastraCandidatoMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel_cad_candidatoMousePressed(evt);
+                bt_cadastraCandidatoMousePressed(evt);
             }
         });
 
@@ -213,11 +213,11 @@ public class telaInicial extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_cad_candidato, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(bt_cadastraCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_cad_candidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_cadastraCandidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel7.setBackground(new java.awt.Color(152, 163, 199));
@@ -273,17 +273,17 @@ public class telaInicial extends javax.swing.JFrame {
 
         telaEleitor.setBackground(new java.awt.Color(233, 233, 233));
 
-        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 20)); // NOI18N
-        jLabel7.setText("Cadastrar Eleitor");
+        jLabel_tituloCadastraEleitor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 20)); // NOI18N
+        jLabel_tituloCadastraEleitor.setText("Cadastrar Eleitor");
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel1.setText("Nome");
+        jLabel_nomeEleitor.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_nomeEleitor.setText("Nome");
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel2.setText("Matricula");
+        jLabel_matriculaEleitor.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_matriculaEleitor.setText("Matricula");
 
-        jLabel3.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel3.setText("Idade");
+        jLabel_idadeEleitor.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_idadeEleitor.setText("Idade");
 
         eleitorNome.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
         eleitorNome.addActionListener(new java.awt.event.ActionListener() {
@@ -296,14 +296,19 @@ public class telaInicial extends javax.swing.JFrame {
 
         eleitorIdade.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
 
-        jLabel4.setText("Salvar Eleitor");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_salvarEleitor.setText("Salvar Eleitor");
+        bt_salvarEleitor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel4MousePressed(evt);
+                bt_salvarEleitorMousePressed(evt);
             }
         });
 
-        jLabel5.setText("Visualizar Lista de Eleitor");
+        bt_visualizarListaEleitor.setText("Visualizar Lista de Eleitor");
+        bt_visualizarListaEleitor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bt_visualizarListaEleitorMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout telaEleitorLayout = new javax.swing.GroupLayout(telaEleitor);
         telaEleitor.setLayout(telaEleitorLayout);
@@ -312,16 +317,16 @@ public class telaInicial extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaEleitorLayout.createSequentialGroup()
                 .addContainerGap(122, Short.MAX_VALUE)
                 .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_nomeEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(telaEleitorLayout.createSequentialGroup()
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(89, 89, 89)
-                            .addComponent(jLabel5))
+                            .addComponent(bt_salvarEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(91, 91, 91)
+                            .addComponent(bt_visualizarListaEleitor))
                         .addGroup(telaEleitorLayout.createSequentialGroup()
                             .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel_matriculaEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel_idadeEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(eleitorNome, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,121 +335,134 @@ public class telaInicial extends javax.swing.JFrame {
                 .addGap(122, 122, 122))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaEleitorLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel7)
+                .addComponent(jLabel_tituloCadastraEleitor)
                 .addGap(602, 602, 602))
         );
         telaEleitorLayout.setVerticalGroup(
             telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaEleitorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(jLabel_tituloCadastraEleitor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_nomeEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eleitorNome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_matriculaEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eleitorMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eleitorIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel_idadeEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(telaEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(110, 110, 110))
+                    .addComponent(bt_visualizarListaEleitor)
+                    .addComponent(bt_salvarEleitor))
+                .addGap(136, 136, 136))
         );
 
         telas.add(telaEleitor);
         telaEleitor.setBounds(0, 0, 1370, 450);
 
-        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 20)); // NOI18N
-        jLabel9.setText("Cadastrar Candidato");
+        jLabel_tituloCadastrarCandidato.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 20)); // NOI18N
+        jLabel_tituloCadastrarCandidato.setText("Cadastrar Candidato");
 
-        jLabel10.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel10.setText("Nome");
+        jLabel_nomeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_nomeCandidato.setText("Nome");
 
-        jLabel11.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel11.setText("Matricula");
+        jLabel_matriculaCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_matriculaCandidato.setText("Matricula");
 
-        jLabel12.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel12.setText("Idade");
+        jLabel_idadeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_idadeCandidato.setText("Idade");
 
-        jTextField4.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_nomeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jTextField_nomeCandidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jTextField_nomeCandidatoActionPerformed(evt);
             }
         });
 
-        jTextField5.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jTextField_matriculaCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
 
-        jTextField6.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jTextField_idadeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
 
-        jLabel13.setText("Salvar Eleitor");
+        bt_salvarCandidato.setText("Salvar Candidato");
+        bt_salvarCandidato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bt_salvarCandidatoMousePressed(evt);
+            }
+        });
 
-        jLabel14.setText("Visualizar Lista de Eleitor");
+        bt_visualizarListaCandidato.setText("Visualizar Lista de Candidato");
+        bt_visualizarListaCandidato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bt_visualizarListaCandidatoMousePressed(evt);
+            }
+        });
 
-        jLabel15.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel15.setText("Anexar Foto");
+        bt_anexarFotoCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        bt_anexarFotoCandidato.setText("Anexar Foto");
 
         javax.swing.GroupLayout telaCandidatoLayout = new javax.swing.GroupLayout(telaCandidato);
         telaCandidato.setLayout(telaCandidatoLayout);
         telaCandidatoLayout.setHorizontalGroup(
             telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
-                .addContainerGap(122, Short.MAX_VALUE)
+                .addContainerGap(103, Short.MAX_VALUE)
                 .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(telaCandidatoLayout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(822, 822, 822)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel14))
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(telaCandidatoLayout.createSequentialGroup()
+                            .addComponent(bt_anexarFotoCandidato)
+                            .addGap(1048, 1048, 1048))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
+                            .addComponent(bt_salvarCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(189, 189, 189)))
                     .addGroup(telaCandidatoLayout.createSequentialGroup()
                         .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(122, 122, 122))
+                            .addComponent(jLabel_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(bt_visualizarListaCandidato)
+                                .addGroup(telaCandidatoLayout.createSequentialGroup()
+                                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(141, 141, 141))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel9)
+                .addComponent(jLabel_tituloCadastrarCandidato)
                 .addGap(602, 602, 602))
         );
         telaCandidatoLayout.setVerticalGroup(
             telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(jLabel_tituloCadastrarCandidato)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(bt_visualizarListaCandidato)
+                        .addComponent(bt_salvarCandidato))
                     .addGroup(telaCandidatoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(telaCandidatoLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel15)))
+                        .addGap(27, 27, 27)
+                        .addComponent(bt_anexarFotoCandidato)))
                 .addGap(132, 132, 132))
         );
 
@@ -601,61 +619,74 @@ public class telaInicial extends javax.swing.JFrame {
 
     }
 
-    private void jLabel_cad_eleitorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_cad_eleitorMousePressed
+    private void bt_cadastraEleitorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cadastraEleitorMousePressed
         apagarTelas();
         telaEleitor.setVisible(true);
-    }//GEN-LAST:event_jLabel_cad_eleitorMousePressed
+    }//GEN-LAST:event_bt_cadastraEleitorMousePressed
 
-    private void jLabel_cad_candidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_cad_candidatoMousePressed
+    private void bt_cadastraCandidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cadastraCandidatoMousePressed
         apagarTelas();
         telaCandidato.setVisible(true);
-    }//GEN-LAST:event_jLabel_cad_candidatoMousePressed
+    }//GEN-LAST:event_bt_cadastraCandidatoMousePressed
 
-    private void jLabel_cad_eleitorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_cad_eleitorMouseEntered
+    private void bt_cadastraEleitorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cadastraEleitorMouseEntered
 
-    }//GEN-LAST:event_jLabel_cad_eleitorMouseEntered
+    }//GEN-LAST:event_bt_cadastraEleitorMouseEntered
 
-    private void jLabel_cad_eleitorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_cad_eleitorMouseExited
+    private void bt_cadastraEleitorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cadastraEleitorMouseExited
 
-    }//GEN-LAST:event_jLabel_cad_eleitorMouseExited
+    }//GEN-LAST:event_bt_cadastraEleitorMouseExited
 
-    private void jLabel_cad_candidatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_cad_candidatoMouseEntered
+    private void bt_cadastraCandidatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cadastraCandidatoMouseEntered
 
-    }//GEN-LAST:event_jLabel_cad_candidatoMouseEntered
+    }//GEN-LAST:event_bt_cadastraCandidatoMouseEntered
 
-    private void jLabel_cad_candidatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_cad_candidatoMouseExited
+    private void bt_cadastraCandidatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cadastraCandidatoMouseExited
 
-    }//GEN-LAST:event_jLabel_cad_candidatoMouseExited
+    }//GEN-LAST:event_bt_cadastraCandidatoMouseExited
 
     private void eleitorNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eleitorNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_eleitorNomeActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void jTextField_nomeCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_nomeCandidatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_jTextField_nomeCandidatoActionPerformed
 
-    private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
+    private void bt_salvarEleitorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarEleitorMousePressed
 
         CadastroEleitor.cadastrarEleitor(eleitorNome.getText(), Integer.parseInt(eleitorMatricula.getText()), Integer.parseInt(eleitorIdade.getText()), listaEleitores);
         
 
-    }//GEN-LAST:event_jLabel4MousePressed
+    }//GEN-LAST:event_bt_salvarEleitorMousePressed
 
-    private void jLabel_importaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_importaMousePressed
+    private void btl_importaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btl_importaMousePressed
         apagarTelas();
         telaImportar.setVisible(true);
-    }//GEN-LAST:event_jLabel_importaMousePressed
+    }//GEN-LAST:event_btl_importaMousePressed
 
-    private void jLabel_exporta_urnaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_exporta_urnaMousePressed
+    private void bt_exportaUrnaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_exportaUrnaMousePressed
         apagarTelas();
         telaExportarUrna.setVisible(true);
-    }//GEN-LAST:event_jLabel_exporta_urnaMousePressed
+    }//GEN-LAST:event_bt_exportaUrnaMousePressed
 
-    private void jLabel_exporta_tseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_exporta_tseMousePressed
+    private void bt_exportaTseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_exportaTseMousePressed
         apagarTelas();
         telaExportarTSE.setVisible(true);
-    }//GEN-LAST:event_jLabel_exporta_tseMousePressed
+    }//GEN-LAST:event_bt_exportaTseMousePressed
+
+    private void bt_salvarCandidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarCandidatoMousePressed
+       
+    }//GEN-LAST:event_bt_salvarCandidatoMousePressed
+
+    private void bt_visualizarListaCandidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_visualizarListaCandidatoMousePressed
+     
+                
+    }//GEN-LAST:event_bt_visualizarListaCandidatoMousePressed
+
+    private void bt_visualizarListaEleitorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_visualizarListaEleitorMousePressed
+
+    }//GEN-LAST:event_bt_visualizarListaEleitorMousePressed
 
     /**
      * @param args the command line arguments
@@ -696,36 +727,36 @@ public class telaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bt_anexarFotoCandidato;
+    private javax.swing.JLabel bt_cadastraCandidato;
+    private javax.swing.JLabel bt_cadastraEleitor;
+    private javax.swing.JLabel bt_exportaTse;
+    private javax.swing.JLabel bt_exportaUrna;
+    private javax.swing.JLabel bt_salvarCandidato;
+    private javax.swing.JLabel bt_salvarEleitor;
+    private javax.swing.JLabel bt_visualizarListaCandidato;
+    private javax.swing.JLabel bt_visualizarListaEleitor;
+    private javax.swing.JLabel btl_importa;
     private javax.swing.JTextField eleitorIdade;
     private javax.swing.JTextField eleitorMatricula;
     private javax.swing.JTextField eleitorNome;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel_cad_candidato;
-    private javax.swing.JLabel jLabel_cad_eleitor;
-    private javax.swing.JLabel jLabel_exporta_tse;
-    private javax.swing.JLabel jLabel_exporta_urna;
-    private javax.swing.JLabel jLabel_importa;
+    private javax.swing.JLabel jLabel_idadeCandidato;
+    private javax.swing.JLabel jLabel_idadeEleitor;
+    private javax.swing.JLabel jLabel_matriculaCandidato;
+    private javax.swing.JLabel jLabel_matriculaEleitor;
+    private javax.swing.JLabel jLabel_nomeCandidato;
+    private javax.swing.JLabel jLabel_nomeEleitor;
+    private javax.swing.JLabel jLabel_tituloCadastraEleitor;
+    private javax.swing.JLabel jLabel_tituloCadastrarCandidato;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -733,9 +764,9 @@ public class telaInicial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField_idadeCandidato;
+    private javax.swing.JTextField jTextField_matriculaCandidato;
+    private javax.swing.JTextField jTextField_nomeCandidato;
     private javax.swing.JPanel telaCandidato;
     private javax.swing.JPanel telaEleitor;
     private javax.swing.JPanel telaExportarTSE;

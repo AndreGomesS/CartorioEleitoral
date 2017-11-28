@@ -31,8 +31,8 @@ public class CartorioEleitoral {
         CadastroCandidato.cadastrarCandidato(0, "sem foto", "André", 160300003, 1990, listaCandidatos);
         CadastroCandidato.cadastrarCandidato(0, "sem foto", "AndréDois", 160300003, 1990, listaCandidatos);
         
-        
-        
+  
+        Manipulador.lerArquivoEleitor();
         
         
 //        listaCandidatos.forEach((obj) -> {
