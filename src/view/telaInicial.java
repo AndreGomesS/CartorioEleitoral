@@ -58,16 +58,6 @@ public class telaInicial extends javax.swing.JFrame {
         bt_cadastraCandidato = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         telas = new javax.swing.JPanel();
-        telaEleitor = new javax.swing.JPanel();
-        jLabel_tituloCadastraEleitor = new javax.swing.JLabel();
-        jLabel_nomeEleitor = new javax.swing.JLabel();
-        jLabel_matriculaEleitor = new javax.swing.JLabel();
-        jLabel_idadeEleitor = new javax.swing.JLabel();
-        eleitorNome = new javax.swing.JTextField();
-        eleitorMatricula = new javax.swing.JTextField();
-        eleitorIdade = new javax.swing.JTextField();
-        bt_salvarEleitor = new javax.swing.JLabel();
-        bt_visualizarListaEleitor = new javax.swing.JLabel();
         telaCandidato = new javax.swing.JPanel();
         jLabel_tituloCadastrarCandidato = new javax.swing.JLabel();
         jLabel_nomeCandidato = new javax.swing.JLabel();
@@ -79,6 +69,16 @@ public class telaInicial extends javax.swing.JFrame {
         bt_salvarCandidato = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         bt_anexarFotoCandidato = new javax.swing.JLabel();
+        telaEleitor = new javax.swing.JPanel();
+        jLabel_tituloCadastraEleitor = new javax.swing.JLabel();
+        jLabel_nomeEleitor = new javax.swing.JLabel();
+        jLabel_matriculaEleitor = new javax.swing.JLabel();
+        jLabel_idadeEleitor = new javax.swing.JLabel();
+        eleitorNome = new javax.swing.JTextField();
+        eleitorMatricula = new javax.swing.JTextField();
+        eleitorIdade = new javax.swing.JTextField();
+        bt_salvarEleitor = new javax.swing.JLabel();
+        bt_visualizarListaEleitor = new javax.swing.JLabel();
         telaExportarTSE = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -271,6 +271,106 @@ public class telaInicial extends javax.swing.JFrame {
         telas.setBackground(new java.awt.Color(255, 255, 255));
         telas.setLayout(null);
 
+        jLabel_tituloCadastrarCandidato.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 20)); // NOI18N
+        jLabel_tituloCadastrarCandidato.setText("Cadastrar Candidato");
+
+        jLabel_nomeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_nomeCandidato.setText("Nome");
+
+        jLabel_matriculaCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_matriculaCandidato.setText("Matricula");
+
+        jLabel_idadeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jLabel_idadeCandidato.setText("Idade");
+
+        jTextField_nomeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        jTextField_nomeCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_nomeCandidatoActionPerformed(evt);
+            }
+        });
+
+        jTextField_matriculaCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+
+        jTextField_idadeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+
+        bt_salvarCandidato.setText("Salvar Candidato");
+        bt_salvarCandidato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bt_salvarCandidatoMousePressed(evt);
+            }
+        });
+
+        jLabel14.setText("Visualizar Lista de Candidato");
+
+        bt_anexarFotoCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
+        bt_anexarFotoCandidato.setText("Anexar Foto");
+
+        javax.swing.GroupLayout telaCandidatoLayout = new javax.swing.GroupLayout(telaCandidato);
+        telaCandidato.setLayout(telaCandidatoLayout);
+        telaCandidatoLayout.setHorizontalGroup(
+            telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
+                .addContainerGap(103, Short.MAX_VALUE)
+                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(telaCandidatoLayout.createSequentialGroup()
+                            .addComponent(bt_anexarFotoCandidato)
+                            .addGap(1048, 1048, 1048))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
+                            .addComponent(bt_salvarCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(189, 189, 189)))
+                    .addGroup(telaCandidatoLayout.createSequentialGroup()
+                        .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel14)
+                                .addGroup(telaCandidatoLayout.createSequentialGroup()
+                                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(141, 141, 141))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel_tituloCadastrarCandidato)
+                .addGap(602, 602, 602))
+        );
+        telaCandidatoLayout.setVerticalGroup(
+            telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_tituloCadastrarCandidato)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel14)
+                        .addComponent(bt_salvarCandidato))
+                    .addGroup(telaCandidatoLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(bt_anexarFotoCandidato)))
+                .addGap(132, 132, 132))
+        );
+
+        telas.add(telaCandidato);
+        telaCandidato.setBounds(0, 0, 1370, 450);
+
         telaEleitor.setBackground(new java.awt.Color(233, 233, 233));
 
         jLabel_tituloCadastraEleitor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 20)); // NOI18N
@@ -359,101 +459,6 @@ public class telaInicial extends javax.swing.JFrame {
 
         telas.add(telaEleitor);
         telaEleitor.setBounds(0, 0, 1370, 450);
-
-        jLabel_tituloCadastrarCandidato.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 20)); // NOI18N
-        jLabel_tituloCadastrarCandidato.setText("Cadastrar Candidato");
-
-        jLabel_nomeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel_nomeCandidato.setText("Nome");
-
-        jLabel_matriculaCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel_matriculaCandidato.setText("Matricula");
-
-        jLabel_idadeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jLabel_idadeCandidato.setText("Idade");
-
-        jTextField_nomeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        jTextField_nomeCandidato.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_nomeCandidatoActionPerformed(evt);
-            }
-        });
-
-        jTextField_matriculaCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-
-        jTextField_idadeCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-
-        bt_salvarCandidato.setText("Salvar Candidato");
-
-        jLabel14.setText("Visualizar Lista de Candidato");
-
-        bt_anexarFotoCandidato.setFont(new java.awt.Font("Yu Gothic Light", 0, 20)); // NOI18N
-        bt_anexarFotoCandidato.setText("Anexar Foto");
-
-        javax.swing.GroupLayout telaCandidatoLayout = new javax.swing.GroupLayout(telaCandidato);
-        telaCandidato.setLayout(telaCandidatoLayout);
-        telaCandidatoLayout.setHorizontalGroup(
-            telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
-                .addContainerGap(103, Short.MAX_VALUE)
-                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(telaCandidatoLayout.createSequentialGroup()
-                            .addComponent(bt_anexarFotoCandidato)
-                            .addGap(1048, 1048, 1048))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
-                            .addComponent(bt_salvarCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(189, 189, 189)))
-                    .addGroup(telaCandidatoLayout.createSequentialGroup()
-                        .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel14)
-                                .addGroup(telaCandidatoLayout.createSequentialGroup()
-                                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(141, 141, 141))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel_tituloCadastrarCandidato)
-                .addGap(602, 602, 602))
-        );
-        telaCandidatoLayout.setVerticalGroup(
-            telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCandidatoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_tituloCadastrarCandidato)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_nomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_matriculaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel_idadeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(telaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel14)
-                        .addComponent(bt_salvarCandidato))
-                    .addGroup(telaCandidatoLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(bt_anexarFotoCandidato)))
-                .addGap(132, 132, 132))
-        );
-
-        telas.add(telaCandidato);
-        telaCandidato.setBounds(0, 0, 1370, 450);
 
         jLabel20.setText("jLabel20");
 
@@ -660,6 +665,10 @@ public class telaInicial extends javax.swing.JFrame {
         apagarTelas();
         telaExportarTSE.setVisible(true);
     }//GEN-LAST:event_bt_exportaTseMousePressed
+
+    private void bt_salvarCandidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarCandidatoMousePressed
+       
+    }//GEN-LAST:event_bt_salvarCandidatoMousePressed
 
     /**
      * @param args the command line arguments

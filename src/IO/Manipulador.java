@@ -132,6 +132,33 @@ public class Manipulador {
             );
         }
     }
+    
+    public static void lerArquivoPopularTabelaEleitor(){
+        String linhaLida;
+        try {
+            FileReader leitor = new FileReader(getFileEleitor());
+            BufferedReader buffer = new BufferedReader(leitor);
+            
+            // Faz algo com o que for lido, setar um objeto, por exemplo e add 
+            // a lisdaDePessoas
+            while( (linhaLida = buffer.readLine()) != null ) {
+                System.out.println(linhaLida);
+            }
+            
+            buffer.close();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Manipulador.class.getName()).log(
+                Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoEleitor, ex
+            );
+        } catch (IOException ex) {
+            Logger.getLogger(Manipulador.class.getName()).log(
+                Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoEleitor, ex
+            );
+        }
+    }
+    
+    
     public static void lerArquivoCandidato(){
         String linhaLida;
         try {
