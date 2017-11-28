@@ -104,7 +104,7 @@ public class Manipulador {
            
         return new File(nomeDiretorio + "/" + nomeArquivoCandidato);
     }
-    
+   
     /**
      * Faz a leitura de um aquivo em linha.
      */
