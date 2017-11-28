@@ -1,4 +1,4 @@
- /*
+/*
  * Manipula arquivo de linha que contém dados referêntes ao modelo.
  * Principais operações: leitura e escrita.
  */
@@ -13,17 +13,19 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Candidato;
+import model.Eleitor;
 
 /**
  *
  * @author Elias Gonçalves, André Gomes
- * 
+ *
  */
 public class Manipulador {
-    
+
     // Variáveis
     private static File diretorio;
     private static File arquivo;
@@ -32,187 +34,172 @@ public class Manipulador {
     private static String nomeArquivoCandidato = "listaDeCandidatos.txt";
     private static ArrayList<Pessoa> listaDeEleitores = new ArrayList();
     private static ArrayList<Pessoa> listaDeCandidatos = new ArrayList();
-    
+
     // Métodos:
     public static ArrayList<Pessoa> getListaDeEleitores() {
         return listaDeEleitores;
     }
+
     public static ArrayList<Pessoa> getListaDeCandidatos() {
         return listaDeCandidatos;
     }
-    
-    private static void criarDiretorio(){
+
+    private static void criarDiretorio() {
         diretorio = new File(nomeDiretorio);
         diretorio.mkdir();
     }
-    
-    protected static void deletarDiretorio(){
+
+    protected static void deletarDiretorio() {
         diretorio = new File(nomeDiretorio);
         diretorio.delete();
     }
-    
-    protected static void criarArquivoEleitor(){    
+
+    protected static void criarArquivoEleitor() {
         try {
             diretorio = new File(nomeDiretorio);
-            if(!diretorio.exists())
+            if (!diretorio.exists()) {
                 criarDiretorio();
+            }
             arquivo = new File(nomeDiretorio + "/" + nomeArquivoEleitor);
             arquivo.createNewFile();
         } catch (IOException ex) {
             Logger.getLogger(
-                Manipulador.class.getName()).log(Level.SEVERE, 
-                "Erro ao criar arquivo " + nomeArquivoEleitor, ex
+                    Manipulador.class.getName()).log(Level.SEVERE,
+                    "Erro ao criar arquivo " + nomeArquivoEleitor, ex
             );
         }
     }
-    protected static void criarArquivoCandidato(){    
+
+    protected static void criarArquivoCandidato() {
         try {
             diretorio = new File(nomeDiretorio);
-            if(!diretorio.exists())
+            if (!diretorio.exists()) {
                 criarDiretorio();
+            }
             arquivo = new File(nomeDiretorio + "/" + nomeArquivoCandidato);
             arquivo.createNewFile();
         } catch (IOException ex) {
             Logger.getLogger(
-                Manipulador.class.getName()).log(Level.SEVERE, 
-                "Erro ao criar arquivo " + nomeArquivoCandidato, ex
+                    Manipulador.class.getName()).log(Level.SEVERE,
+                    "Erro ao criar arquivo " + nomeArquivoCandidato, ex
             );
         }
     }
-    
-    protected static void deletarArquivoEleitor(){
+
+    protected static void deletarArquivoEleitor() {
         arquivo = getFileEleitor();
         arquivo.delete();
     }
-    protected static void deletarArquivoCandidato(){
+
+    protected static void deletarArquivoCandidato() {
         arquivo = getFileCandidato();
         arquivo.delete();
     }
-    private static File getFileEleitor(){
+
+    private static File getFileEleitor() {
         File file = new File(nomeDiretorio + "/" + nomeArquivoEleitor);
-        
-        if(!file.exists())
-           criarArquivoEleitor();
-           
+
+        if (!file.exists()) {
+            criarArquivoEleitor();
+        }
+
         return new File(nomeDiretorio + "/" + nomeArquivoEleitor);
     }
-    private static File getFileCandidato(){
+
+    private static File getFileCandidato() {
         File file = new File(nomeDiretorio + "/" + nomeArquivoCandidato);
-        
-        if(!file.exists())
-           criarArquivoCandidato();
-           
+
+        if (!file.exists()) {
+            criarArquivoCandidato();
+        }
+
         return new File(nomeDiretorio + "/" + nomeArquivoCandidato);
     }
-   
+
     /**
      * Faz a leitura de um aquivo em linha.
      */
-    public static void lerArquivoEleitor(){
+    public static void lerArquivoEleitor() {
         String linhaLida;
         try {
             FileReader leitor = new FileReader(getFileEleitor());
             BufferedReader buffer = new BufferedReader(leitor);
-            
+
             // Faz algo com o que for lido, setar um objeto, por exemplo e add 
             // a lisdaDePessoas
-            while( (linhaLida = buffer.readLine()) != null ) {
+            while ((linhaLida = buffer.readLine()) != null) {
                 System.out.println(linhaLida);
             }
-            
+
             buffer.close();
-            
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoEleitor, ex
+                    Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoEleitor, ex
             );
         } catch (IOException ex) {
             Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoEleitor, ex
+                    Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoEleitor, ex
             );
         }
     }
-    
-    public static void lerArquivoPopularTabelaEleitor(){
-        String linhaLida;
-        try {
-            FileReader leitor = new FileReader(getFileEleitor());
-            BufferedReader buffer = new BufferedReader(leitor);
-            
-            // Faz algo com o que for lido, setar um objeto, por exemplo e add 
-            // a lisdaDePessoas
-            while( (linhaLida = buffer.readLine()) != null ) {
-                System.out.println(linhaLida);
-            }
-            
-            buffer.close();
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoEleitor, ex
-            );
-        } catch (IOException ex) {
-            Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoEleitor, ex
-            );
-        }
-    }
-    
-    
-    public static void lerArquivoCandidato(){
+
+  
+    public static void lerArquivoCandidato() {
         String linhaLida;
         try {
             FileReader leitor = new FileReader(getFileCandidato());
             BufferedReader buffer = new BufferedReader(leitor);
-            
+
             // Faz algo com o que for lido, setar um objeto, por exemplo e add 
             // a lisdaDePessoas
-            while( (linhaLida = buffer.readLine()) != null ) {
+            while ((linhaLida = buffer.readLine()) != null) {
                 System.out.println(linhaLida);
             }
-            
+
             buffer.close();
-            
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoCandidato, ex
+                    Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoCandidato, ex
             );
         } catch (IOException ex) {
             Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoCandidato, ex
+                    Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoCandidato, ex
             );
         }
     }
-        
-    public static void escreverEleitor(Pessoa p){
+
+    public static void escreverEleitor(Pessoa p) {
         try {
             FileWriter escritor = new FileWriter(getFileEleitor(), true);
             BufferedWriter buffer = new BufferedWriter(escritor);
-            
+
             buffer.write(p.getNome());
             buffer.newLine();
             buffer.write(Integer.toString(p.getMatricula()));
             buffer.newLine();
             buffer.write(Integer.toString(p.getAnoNascimento()));
             buffer.newLine();
-              
+
             buffer.close();
-            
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoEleitor, ex
+                    Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoEleitor, ex
             );
         } catch (IOException ex) {
             Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao escrever linha no arquivo " + nomeArquivoEleitor, ex
+                    Level.SEVERE, "Erro ao escrever linha no arquivo " + nomeArquivoEleitor, ex
             );
         }
     }
-    public static void escreverCandidato(Candidato p){
+
+    public static void escreverCandidato(Candidato p) {
         try {
             FileWriter escritor = new FileWriter(getFileCandidato(), true);
             BufferedWriter buffer = new BufferedWriter(escritor);
-            
+
             buffer.write(p.getNome());
             buffer.newLine();
             buffer.write(Integer.toString(p.getMatricula()));
@@ -223,18 +210,57 @@ public class Manipulador {
             buffer.newLine();
             buffer.write(Integer.toString(p.getQtdVotos()));
             buffer.newLine();
-              
+
             buffer.close();
-            
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoCandidato, ex
+                    Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoCandidato, ex
             );
         } catch (IOException ex) {
             Logger.getLogger(Manipulador.class.getName()).log(
-                Level.SEVERE, "Erro ao escrever linha no arquivo " + nomeArquivoCandidato, ex
+                    Level.SEVERE, "Erro ao escrever linha no arquivo " + nomeArquivoCandidato, ex
             );
         }
     }
-    
+
+    public static List<Eleitor> ler() {
+        List<Eleitor> listaEleitores = new ArrayList<>();
+        String linhaLida;
+        Eleitor eleitor = null;
+        int i = 1;
+        try {
+            FileReader leitor = new FileReader(getFileEleitor());
+            BufferedReader buffer = new BufferedReader(leitor);
+
+            // Faz algo com o que for lido, setar um objeto, por exemplo e add 
+            // a lisdaDePessoas
+            while ((linhaLida = buffer.readLine()) != null) {
+                if (i == 1) {
+                    eleitor.setNome(linhaLida);
+                } else if (i == 2) {
+                    eleitor.setMatricula(Integer.parseInt(linhaLida));
+                } else if (i == 3) {
+                    eleitor.setAnoNascimento(Integer.parseInt(linhaLida));
+                } else if(i==4){
+                    listaEleitores.add(eleitor);
+                    i=0;
+                }
+                i++;       
+            }
+            buffer.close();
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Manipulador.class.getName()).log(
+                    Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoEleitor, ex
+            );
+        } catch (IOException ex) {
+            Logger.getLogger(Manipulador.class.getName()).log(
+                    Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoEleitor, ex
+            );
+        }
+        return listaEleitores;
+
+    }
+
 }
