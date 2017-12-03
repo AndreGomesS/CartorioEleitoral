@@ -262,5 +262,78 @@ public class Manipulador {
         return listaEleitores;
 
     }
+    public static void lerArquivoEleitor(List listaEleitores) {
+        // A primeira coisa a se fazer é limpar o arraylist de eleitores, caso seja a segunda consulta 
+        //na lista ela já vai estar preenchida, portanto haverá duplicação
+        
+        listaEleitores.clear(); 
+        String linhaLida;
+        Eleitor eleitor;
+        try {
+            FileReader leitor = new FileReader(getFileEleitor());
+            BufferedReader buffer = new BufferedReader(leitor);
+
+            // Faz algo com o que for lido, setar um objeto, por exemplo e add 
+            // a lisdaDePessoas
+            while ((linhaLida = buffer.readLine()) != null) {
+                eleitor = new Eleitor(linhaLida, 1, 2);
+                linhaLida = buffer.readLine();
+                eleitor.setMatricula(Integer.parseInt(linhaLida));
+                linhaLida = buffer.readLine();
+                eleitor.setAnoNascimento(Integer.parseInt(linhaLida));
+                listaEleitores.add(eleitor);
+            }
+
+            buffer.close();
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Manipulador.class.getName()).log(
+                    Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoEleitor, ex
+            );
+        } catch (IOException ex) {
+            Logger.getLogger(Manipulador.class.getName()).log(
+                    Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoEleitor, ex
+            );
+        }
+    }
+    public static void lerArquivoCandidato(List listaCandidatos) {
+        // A primeira coisa a se fazer é limpar o arraylist de candidatos, caso seja a segunda consulta 
+        //na lista ela já vai estar preenchida, portanto haverá duplicação    
+        listaCandidatos.clear();
+        
+        String linhaLida;
+        Candidato candidato;
+        
+        try {
+            FileReader leitor = new FileReader(getFileCandidato());
+            BufferedReader buffer = new BufferedReader(leitor);
+
+            // Faz algo com o que for lido, setar um objeto, por exemplo e add 
+            // a lisdaDePessoas
+            while ((linhaLida = buffer.readLine()) != null) {
+                candidato = new Candidato(0, "semFoto", linhaLida, 0, 0);
+                linhaLida = buffer.readLine();
+                candidato.setMatricula(Integer.parseInt(linhaLida));
+                linhaLida = buffer.readLine();
+                candidato.setAnoNascimento(Integer.parseInt(linhaLida));
+                linhaLida = buffer.readLine();
+                candidato.setPathFoto(linhaLida);
+                linhaLida = buffer.readLine();
+                candidato.setQtdVotos(Integer.parseInt(linhaLida));
+                listaCandidatos.add(candidato);
+            }
+
+            buffer.close();
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Manipulador.class.getName()).log(
+                    Level.SEVERE, "Erro ao criar leitor para o arquivo " + nomeArquivoCandidato, ex
+            );
+        } catch (IOException ex) {
+            Logger.getLogger(Manipulador.class.getName()).log(
+                    Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoCandidato, ex
+            );
+        }
+    }
 
 }
