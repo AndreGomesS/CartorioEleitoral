@@ -21,17 +21,10 @@ public class CartorioEleitoral {
         List<Candidato> listaCandidatos = new ArrayList<>();
         List<Eleitor> listaEleitores = new ArrayList<>();
 
-
-        //CadastroEleitor.cadastrarEleitor("AndréEleitor", 160300003, 1990, listaEleitores);
-        //CadastroEleitor.cadastrarEleitor("AndréEleitorDois", 160300003, 1990, listaEleitores);
-        CadastroCandidato.cadastrarCandidato(0, "sem foto", "André", 160300003, 1990, listaCandidatos);
-        CadastroCandidato.cadastrarCandidato(0, "sem foto", "AndréDois", 160300003, 1990, listaCandidatos);
-
         //CadastroEleitor.cadastrarEleitor("AndréEleitor", 160300003, 1990, listaEleitores);
         //CadastroEleitor.cadastrarEleitor("AndréEleitorDois", 160300003, 1990, listaEleitores);
         //CadastroCandidato.cadastrarCandidato(0, "sem foto", "André", 160300003, 1990, listaCandidatos);
         //CadastroCandidato.cadastrarCandidato(0, "sem foto", "AndréDois", 160300003, 1990, listaCandidatos);
-
 
         Manipulador.lerArquivoEleitor(listaEleitores);
         Manipulador.lerArquivoCandidato(listaCandidatos);
