@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  *
- * @author agome
+ * @author agome te
  */
 
 public class MapeiaDados {
