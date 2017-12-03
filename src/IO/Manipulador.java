@@ -1,6 +1,6 @@
 /*
  * Manipula arquivo de linha que contém dados referêntes ao modelo.
- * Principais operações: leitura e escrita. teste andre
+ * Principais operações: leitura e escrita. teste andre CLeiton
  */
 package IO;
 
