@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Candidato;
 import model.Eleitor;
+import util.CriptografiaSimples;
 
 /**
  *
@@ -34,6 +35,7 @@ public class Manipulador {
     private static String nomeArquivoCandidato = "listaDeCandidatos.txt";
     private static ArrayList<Pessoa> listaDeEleitores = new ArrayList();
     private static ArrayList<Pessoa> listaDeCandidatos = new ArrayList();
+    private static int chave = 123;
 
     // Métodos:
     public static ArrayList<Pessoa> getListaDeEleitores() {
@@ -120,11 +122,14 @@ public class Manipulador {
             FileWriter escritor = new FileWriter(getFileEleitor(), true);
             BufferedWriter buffer = new BufferedWriter(escritor);
 
-            buffer.write(p.getNome());
+            buffer.write(
+                    CriptografiaSimples.Criptografar(p.getNome(), chave));
             buffer.newLine();
-            buffer.write(Integer.toString(p.getMatricula()));
+            buffer.write(
+                    CriptografiaSimples.Criptografar(Integer.toString(p.getMatricula()), chave));
             buffer.newLine();
-            buffer.write(Integer.toString(p.getAnoNascimento()));
+            buffer.write(
+                    CriptografiaSimples.Criptografar(Integer.toString(p.getAnoNascimento()), chave));
             buffer.newLine();
 
             buffer.close();
@@ -145,15 +150,15 @@ public class Manipulador {
             FileWriter escritor = new FileWriter(getFileCandidato(), true);
             BufferedWriter buffer = new BufferedWriter(escritor);
 
-            buffer.write(p.getNome());
+            buffer.write(CriptografiaSimples.Criptografar(p.getNome(),chave));
             buffer.newLine();
-            buffer.write(Integer.toString(p.getMatricula()));
+            buffer.write(CriptografiaSimples.Criptografar(Integer.toString(p.getMatricula()), chave));
             buffer.newLine();
-            buffer.write(Integer.toString(p.getAnoNascimento()));
+            buffer.write(CriptografiaSimples.Criptografar(Integer.toString(p.getAnoNascimento()),chave));
             buffer.newLine();
             buffer.write(p.getPathFoto());
             buffer.newLine();
-            buffer.write(Integer.toString(p.getQtdVotos()));
+            buffer.write(CriptografiaSimples.Criptografar(Integer.toString(p.getQtdVotos()),chave));
             buffer.newLine();
 
             buffer.close();
@@ -182,11 +187,14 @@ public class Manipulador {
             // Faz algo com o que for lido, setar um objeto, por exemplo e add 
             // a lisdaDePessoas
             while ((linhaLida = buffer.readLine()) != null) {
-                eleitor = new Eleitor(linhaLida, 1, 2);
+                eleitor = new Eleitor(
+                        CriptografiaSimples.Descriptografar(linhaLida, chave), 1, 2);
                 linhaLida = buffer.readLine();
-                eleitor.setMatricula(Integer.parseInt(linhaLida));
+                eleitor.setMatricula(Integer.parseInt(
+                        CriptografiaSimples.Descriptografar(linhaLida, chave)));
                 linhaLida = buffer.readLine();
-                eleitor.setAnoNascimento(Integer.parseInt(linhaLida));
+                eleitor.setAnoNascimento(Integer.parseInt(
+                        CriptografiaSimples.Descriptografar(linhaLida, chave)));
                 listaEleitores.add(eleitor);
             }
 
@@ -217,16 +225,21 @@ public class Manipulador {
             // Faz algo com o que for lido, setar um objeto, por exemplo e add 
             // a lisdaDePessoas
             while ((linhaLida = buffer.readLine()) != null) {
-                candidato = new Candidato(0, "semFoto", linhaLida, 0, 0);
+                candidato = new Candidato(
+                        0, "semFoto",CriptografiaSimples.Descriptografar(linhaLida, chave), 0, 0);
+                linhaLida = buffer.readLine(); 
+                candidato.setMatricula(Integer.parseInt(
+                        CriptografiaSimples.Descriptografar(linhaLida, chave)));
                 linhaLida = buffer.readLine();
-                candidato.setMatricula(Integer.parseInt(linhaLida));
-                linhaLida = buffer.readLine();
-                candidato.setAnoNascimento(Integer.parseInt(linhaLida));
+                candidato.setAnoNascimento(Integer.parseInt(
+                        CriptografiaSimples.Descriptografar(linhaLida, chave)));
                 linhaLida = buffer.readLine();
                 candidato.setPathFoto(linhaLida);
                 linhaLida = buffer.readLine();
-                candidato.setQtdVotos(Integer.parseInt(linhaLida));
+                candidato.setQtdVotos(Integer.parseInt(
+                        CriptografiaSimples.Descriptografar(linhaLida, chave)));
                 listaCandidatos.add(candidato);
+
             }
 
             buffer.close();

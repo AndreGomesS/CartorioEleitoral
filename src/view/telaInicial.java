@@ -26,6 +26,7 @@ public class telaInicial extends javax.swing.JFrame {
      * Creates new form telaInicial
      */
     int i = 0;
+    String path;
     List<Candidato> listaCandidatosInicial = new ArrayList<>();
     List<Eleitor> listaEleitoresInicial = new ArrayList<>();
 
@@ -693,13 +694,13 @@ public class telaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_exportaTseMousePressed
 
     private void bt_salvarCandidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarCandidatoMousePressed
-
-        CadastroCandidato.cadastrarCandidato(0, "vazio", jTextField_nomeCandidato.getText(), Integer.parseInt(jTextField_matriculaCandidato.getText()), Integer.parseInt(jTextField_idadeCandidato.getText()), listaCandidatosInicial);
+        System.out.println(path);
+        CadastroCandidato.cadastrarCandidato(0,path, jTextField_nomeCandidato.getText(), Integer.parseInt(jTextField_matriculaCandidato.getText()), Integer.parseInt(jTextField_idadeCandidato.getText()), listaCandidatosInicial);
         jTextField_idadeCandidato.setText("");
         jTextField_matriculaCandidato.setText("");
         jTextField_nomeCandidato.setText("");
-
         jTextField_nomeCandidato.requestFocus();// cursor do mouse para nome 
+
 
     }//GEN-LAST:event_bt_salvarCandidatoMousePressed
 
@@ -716,7 +717,6 @@ public class telaInicial extends javax.swing.JFrame {
         tabelaEleitores tela = new tabelaEleitores(this.listaEleitoresInicial);
 
         tela.setVisible(true);
-        System.out.println("Tamanho da Tabela telanIcialERRO= " + this.listaEleitoresInicial.size());
     }//GEN-LAST:event_bt_visualizarListaEleitorMousePressed
 
     private void bt_anexarFotoCandidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_anexarFotoCandidatoMousePressed
@@ -725,9 +725,7 @@ public class telaInicial extends javax.swing.JFrame {
         if (jfc.showOpenDialog(bt_anexarFotoCandidato)==JFileChooser.APPROVE_OPTION) {
             File f = jfc.getSelectedFile();
             jLTeste.setIcon(new ImageIcon(f.toString()));
-        
-            
-            
+            path = f.toString();
         }
     }//GEN-LAST:event_bt_anexarFotoCandidatoMousePressed
 

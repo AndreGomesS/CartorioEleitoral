@@ -39,11 +39,9 @@ public class CartorioEleitoral {
         });*/
         listaCandidatos.forEach((obj) -> {
             //Manipulador.escreverEleitor(obj);
-            System.out.println(obj.getNome() + obj.getMatricula());
+            //System.out.println(obj.getNome() + obj.getMatricula());
         });
         
-
-        System.out.println("Tamanho - " + listaCandidatos.size());
         tela = new telaInicial(listaEleitores, listaCandidatos);
         tela.setVisible(true);
 
