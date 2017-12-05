@@ -9,8 +9,11 @@ import IO.Manipulador;
 import controller.CadastroEleitor;
 import controller.CadastroCandidato;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import model.Candidato;
@@ -18,7 +21,7 @@ import model.Eleitor;
 
 /**
  *
- * @author Cleiton
+ * @author Cleiton, André Gomes, Jordan Junior
  */
 public class telaInicial extends javax.swing.JFrame {
 
@@ -30,15 +33,27 @@ public class telaInicial extends javax.swing.JFrame {
     List<Candidato> listaCandidatosInicial = new ArrayList<>();
     List<Eleitor> listaEleitoresInicial = new ArrayList<>();
 
+    File OrigemEleitor;
+    File OrigemCandidato;
+    File DestinoEleitor;
+    File DestinoCandidato;
+
     public telaInicial(List listaEleitores, List listaCandidatos) {
+
         initComponents();
         apagarTelas();
         this.listaEleitoresInicial = listaEleitores; // faz copia da lista eleitores
         this.listaCandidatosInicial = listaCandidatos;// faz copia da lista candidatos
         telaPrincipal.setVisible(true);
+        //File diretorio = new File("novo");
+        //diretorio.mkdir();
+
     }
 
     private telaInicial() {
+        
+
+        //this.DestinoCandidato = new File("");
         initComponents();
     }
 
@@ -76,6 +91,9 @@ public class telaInicial extends javax.swing.JFrame {
         bt_visualizarListaCandidato = new javax.swing.JLabel();
         bt_anexarFotoCandidato = new javax.swing.JLabel();
         jLTeste = new javax.swing.JLabel();
+        telaExportarUrna = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         telaEleitor = new javax.swing.JPanel();
         jLabel_tituloCadastraEleitor = new javax.swing.JLabel();
         jLabel_nomeEleitor = new javax.swing.JLabel();
@@ -90,9 +108,6 @@ public class telaInicial extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        telaExportarUrna = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         telaImportar = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -389,6 +404,42 @@ public class telaInicial extends javax.swing.JFrame {
         telas.add(telaCandidato);
         telaCandidato.setBounds(0, 0, 1370, 450);
 
+        jLabel18.setText("Exportar dados candidato");
+        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel18MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel18MousePressed(evt);
+            }
+        });
+
+        jLabel19.setText("Exportar dados eleitor");
+
+        javax.swing.GroupLayout telaExportarUrnaLayout = new javax.swing.GroupLayout(telaExportarUrna);
+        telaExportarUrna.setLayout(telaExportarUrnaLayout);
+        telaExportarUrnaLayout.setHorizontalGroup(
+            telaExportarUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(telaExportarUrnaLayout.createSequentialGroup()
+                .addContainerGap(619, Short.MAX_VALUE)
+                .addComponent(jLabel18)
+                .addGap(79, 79, 79)
+                .addComponent(jLabel19)
+                .addGap(441, 441, 441))
+        );
+        telaExportarUrnaLayout.setVerticalGroup(
+            telaExportarUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(telaExportarUrnaLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addGroup(telaExportarUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19))
+                .addContainerGap(275, Short.MAX_VALUE))
+        );
+
+        telas.add(telaExportarUrna);
+        telaExportarUrna.setBounds(0, 0, 1370, 450);
+
         telaEleitor.setBackground(new java.awt.Color(233, 233, 233));
 
         jLabel_tituloCadastraEleitor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 20)); // NOI18N
@@ -521,34 +572,6 @@ public class telaInicial extends javax.swing.JFrame {
 
         telas.add(telaExportarTSE);
         telaExportarTSE.setBounds(0, 0, 1370, 450);
-
-        jLabel18.setText("Exportar dados candidato");
-
-        jLabel19.setText("Exportar dados eleitor");
-
-        javax.swing.GroupLayout telaExportarUrnaLayout = new javax.swing.GroupLayout(telaExportarUrna);
-        telaExportarUrna.setLayout(telaExportarUrnaLayout);
-        telaExportarUrnaLayout.setHorizontalGroup(
-            telaExportarUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(telaExportarUrnaLayout.createSequentialGroup()
-                .addContainerGap(619, Short.MAX_VALUE)
-                .addComponent(jLabel18)
-                .addGap(79, 79, 79)
-                .addComponent(jLabel19)
-                .addGap(441, 441, 441))
-        );
-        telaExportarUrnaLayout.setVerticalGroup(
-            telaExportarUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(telaExportarUrnaLayout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addGroup(telaExportarUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel19))
-                .addContainerGap(275, Short.MAX_VALUE))
-        );
-
-        telas.add(telaExportarUrna);
-        telaExportarUrna.setBounds(0, 0, 1370, 450);
 
         jLabel8.setText("Importar Candidatos");
 
@@ -695,7 +718,7 @@ public class telaInicial extends javax.swing.JFrame {
 
     private void bt_salvarCandidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_salvarCandidatoMousePressed
         System.out.println(path);
-        CadastroCandidato.cadastrarCandidato(0,path, jTextField_nomeCandidato.getText(), Integer.parseInt(jTextField_matriculaCandidato.getText()), Integer.parseInt(jTextField_idadeCandidato.getText()), listaCandidatosInicial);
+        CadastroCandidato.cadastrarCandidato(0, path, jTextField_nomeCandidato.getText(), Integer.parseInt(jTextField_matriculaCandidato.getText()), Integer.parseInt(jTextField_idadeCandidato.getText()), listaCandidatosInicial);
         jTextField_idadeCandidato.setText("");
         jTextField_matriculaCandidato.setText("");
         jTextField_nomeCandidato.setText("");
@@ -722,12 +745,36 @@ public class telaInicial extends javax.swing.JFrame {
     private void bt_anexarFotoCandidatoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_anexarFotoCandidatoMousePressed
         // TODO add your handling code here:
         JFileChooser jfc = new JFileChooser();
-        if (jfc.showOpenDialog(bt_anexarFotoCandidato)==JFileChooser.APPROVE_OPTION) {
+        if (jfc.showOpenDialog(bt_anexarFotoCandidato) == JFileChooser.APPROVE_OPTION) {
             File f = jfc.getSelectedFile();
             jLTeste.setIcon(new ImageIcon(f.toString()));
             path = f.toString();
         }
     }//GEN-LAST:event_bt_anexarFotoCandidatoMousePressed
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel18MouseClicked
+
+    private void jLabel18MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MousePressed
+        JFileChooser janela = new JFileChooser();
+        janela.setSelectedFile(new File("Nome do Arquivo.txt"));
+        int cancelOrSave = janela.showSaveDialog(null);
+        String caminho = janela.getCurrentDirectory().getPath();
+        janela.setDialogTitle("Salvar arquivo");
+        this.OrigemCandidato = new File("C:\\Users\\agome\\Documents\\GitHub\\CartorioEleitoral\\BancoDeDados\\listaDeCandidatos.txt");
+        this.OrigemEleitor = new File("C:\\Users\\agome\\Documents\\GitHub\\CartorioEleitoral\\BancoDeDados\\listaDeEleitores.txt");
+        this.DestinoCandidato = new File(caminho+"\\listaDeCandidatos.txt");
+        this.DestinoEleitor = new File(caminho+"\\listaDeEleitores.txt");
+        try {
+            Manipulador.copiarArquivo(OrigemCandidato, DestinoCandidato);
+            Manipulador.copiarArquivo(OrigemEleitor, DestinoEleitor);
+        } catch (IOException ex) {
+            Logger.getLogger(telaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_jLabel18MousePressed
 
     /**
      * @param args the command linHe arguments

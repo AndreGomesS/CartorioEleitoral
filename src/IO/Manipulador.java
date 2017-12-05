@@ -8,10 +8,13 @@ import model.Pessoa;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -117,6 +120,7 @@ public class Manipulador {
 
         return new File(nomeDiretorio + "/" + nomeArquivoCandidato);
     }
+
     public static void escreverEleitor(Pessoa p) {
         try {
             FileWriter escritor = new FileWriter(getFileEleitor(), true);
@@ -150,15 +154,15 @@ public class Manipulador {
             FileWriter escritor = new FileWriter(getFileCandidato(), true);
             BufferedWriter buffer = new BufferedWriter(escritor);
 
-            buffer.write(CriptografiaSimples.Criptografar(p.getNome(),chave));
+            buffer.write(CriptografiaSimples.Criptografar(p.getNome(), chave));
             buffer.newLine();
             buffer.write(CriptografiaSimples.Criptografar(Integer.toString(p.getMatricula()), chave));
             buffer.newLine();
-            buffer.write(CriptografiaSimples.Criptografar(Integer.toString(p.getAnoNascimento()),chave));
+            buffer.write(CriptografiaSimples.Criptografar(Integer.toString(p.getAnoNascimento()), chave));
             buffer.newLine();
             buffer.write(p.getPathFoto());
             buffer.newLine();
-            buffer.write(CriptografiaSimples.Criptografar(Integer.toString(p.getQtdVotos()),chave));
+            buffer.write(CriptografiaSimples.Criptografar(Integer.toString(p.getQtdVotos()), chave));
             buffer.newLine();
 
             buffer.close();
@@ -173,11 +177,12 @@ public class Manipulador {
             );
         }
     }
+
     public static void lerArquivoEleitor(List listaEleitores) {
         // A primeira coisa a se fazer é limpar o arraylist de eleitores, caso seja a segunda consulta 
         //na lista ela já vai estar preenchida, portanto haverá duplicação
-        
-        listaEleitores.clear(); 
+
+        listaEleitores.clear();
         String linhaLida;
         Eleitor eleitor;
         try {
@@ -210,14 +215,15 @@ public class Manipulador {
             );
         }
     }
+
     public static void lerArquivoCandidato(List listaCandidatos) {
         // A primeira coisa a se fazer é limpar o arraylist de candidatos, caso seja a segunda consulta 
         //na lista ela já vai estar preenchida, portanto haverá duplicação    
         listaCandidatos.clear();
-        
+
         String linhaLida;
         Candidato candidato;
-        
+
         try {
             FileReader leitor = new FileReader(getFileCandidato());
             BufferedReader buffer = new BufferedReader(leitor);
@@ -226,8 +232,8 @@ public class Manipulador {
             // a lisdaDePessoas
             while ((linhaLida = buffer.readLine()) != null) {
                 candidato = new Candidato(
-                        0, "semFoto",CriptografiaSimples.Descriptografar(linhaLida, chave), 0, 0);
-                linhaLida = buffer.readLine(); 
+                        0, "semFoto", CriptografiaSimples.Descriptografar(linhaLida, chave), 0, 0);
+                linhaLida = buffer.readLine();
                 candidato.setMatricula(Integer.parseInt(
                         CriptografiaSimples.Descriptografar(linhaLida, chave)));
                 linhaLida = buffer.readLine();
@@ -253,6 +259,33 @@ public class Manipulador {
                     Level.SEVERE, "Erro ao ler linha do arquivo " + nomeArquivoCandidato, ex
             );
         }
+    }
+
+    public static void copiarArquivo(File arquivoOrigem, File arquivoDestino)
+            throws IOException {
+                
+        if (!arquivoOrigem.exists()) {
+            return;
+        }
+        System.out.println("chegou");
+        if (!arquivoDestino.exists()) {
+            arquivoDestino.createNewFile();
+        }
+
+        FileChannel origem = null;
+        FileChannel destino = null;
+        origem = new FileInputStream(arquivoOrigem).getChannel();
+        destino = new FileOutputStream(arquivoDestino).getChannel();
+        if (destino != null && origem != null) {
+            destino.transferFrom(origem, 0, origem.size());
+        }
+        if (origem != null) {
+            origem.close();
+        }
+        if (destino != null) {
+            destino.close();
+        }
+
     }
 
 }
